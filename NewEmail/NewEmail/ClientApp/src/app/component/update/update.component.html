@@ -1,0 +1,17 @@
+<div style="width: 80%; margin:0px auto">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>Email</td>
+        <td>Creation time</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of list">
+        <td><input type="text" value="{{item.EmailName}}" id="name" /></td>
+        <td><span>{{item.CreateTime}}</span></td>
+        <td><button (click)="alter(item.EID)" class="btn btn-danger">alter</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

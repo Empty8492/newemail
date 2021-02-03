@@ -1,0 +1,25 @@
+<div style="width: 80%; margin:0px auto">
+  <input type="text" id="EmailName" [(ngModel)]="search" (ngModelChange)='searchdata()' class="form-control" />
+  <button (click)="Add()" class="btn btn-danger">Add</button>
+  <button (click)="Alldelete()" class="btn btn-danger">Delete</button>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Check box</th>
+        <th>Email</th>
+        <th>CreateTime</th>
+        <th>UpdateTime</th>
+        <th>operation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of list" [routerLink]="['/emailupdate/',item.EID]">
+        <td><input type="checkbox" value="{{item.EID}}"  /></td>
+        <td><span>{{item.EmailName}}</span></td>
+        <td><span>{{item.CreateTime}}</span></td>
+        <td><span>{{item.UpdateTime}}</span></td>
+        <td><button (click)="Del(item.ID)" class="btn btn-danger">删除</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
